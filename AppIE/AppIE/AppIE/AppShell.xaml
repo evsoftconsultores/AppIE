@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        xmlns:views="clr-namespace:AppIE.Views"
+        xmlns:controls="clr-namespace:AppIE.Controls"
+        FlyoutHeaderBehavior="CollapseOnScroll"
+        Navigating="OnNavigating"
+        Navigated="OnNavigated"
+        Shell.TabBarIsVisible="false"
+        x:Class="AppIE.AppShell">
+
+    <!-- 
+    Shell.NavBarIsVisible = "True"
+        
+        Styles and Resources 
+    -->
+    <Shell.Resources>
+        <Style x:Key="BaseStyle" 
+               TargetType="Element">
+            <Setter Property="Shell.BackgroundColor" 
+                    Value="#455A64" />
+            <Setter Property="Shell.ForegroundColor" 
+                    Value="White" />
+            <Setter Property="Shell.TitleColor" 
+                    Value="White" />
+            <Setter Property="Shell.DisabledColor" 
+                    Value="#B4FFFFFF" />
+            <Setter Property="Shell.UnselectedColor" 
+                    Value="#95FFFFFF" />
+        </Style>
+
+        <Style TargetType="ShellItem" 
+               BasedOn="{StaticResource BaseStyle}" />
+        <Style x:Key="DomesticShell"
+               TargetType="Element" 
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor" 
+                    Value="#039BE6" />
+        </Style>
+
+        <Style x:Key="HomeShell" 
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor" 
+                    Value="{StaticResource BaseColor}" />
+        </Style>
+        <Style x:Key="GthShell" 
+               TargetType="Element" 
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor" 
+                    Value="#ED3B3B" />
+        </Style>
+        <Style x:Key="ActiveTokenShell" 
+               TargetType="Element" 
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#657BFE" />
+        </Style>
+        <Style x:Key="AlmacenShell" 
+               TargetType="Element" 
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor" 
+                    Value="#63BBFF" />
+        </Style>
+
+        <Style x:Key="AMShell" 
+               TargetType="Element" 
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#F8AC59" />
+        </Style>
+    </Shell.Resources>
+
+    <Shell.FlyoutHeader>
+        <controls:FlyoutHeader/>
+    </Shell.FlyoutHeader>
+
+
+    <FlyoutItem Route="colegio"
+                Title="Colegio"
+                FlyoutDisplayOptions="AsMultipleItems">
+
+        <ShellSection Route="home" Title="Inicio" Icon="ic_home_dp.png" Style="{StaticResource HomeShell}">
+            <ShellContent ContentTemplate="{DataTemplate views:HomePage}"/>
+        </ShellSection>
+
+        <ShellSection Route="notas" Title="Calificaciones" Icon="ic_home_dp.png" Style="{StaticResource HomeShell}">
+            <ShellContent ContentTemplate="{DataTemplate views:CalificativoPage}"/>
+        </ShellSection>
+
+    </FlyoutItem>
+
+</Shell>

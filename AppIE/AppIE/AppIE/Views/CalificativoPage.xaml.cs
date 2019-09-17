@@ -1,5 +1,4 @@
-﻿using AppIE.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace AppIE.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LogInPage : ContentPage
+    public partial class CalificativoPage : ContentPage
     {
-        public LogInPage()
+        public CalificativoPage()
         {
             InitializeComponent();
-            BindingContext = new LogInViewModel();
         }
     }
 }

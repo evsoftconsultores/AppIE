@@ -8,15 +8,16 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace AppIE.Views
+namespace AppIE.Controls
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LogInPage : ContentPage
+    public partial class FlyoutHeader : ContentView
     {
-        public LogInPage()
+        FlyoutHeaderViewModel vm;
+        public FlyoutHeader()
         {
             InitializeComponent();
-            BindingContext = new LogInViewModel();
+            vm = new FlyoutHeaderViewModel();
+            BindingContext = vm;
         }
     }
 }

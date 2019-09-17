@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="AppIE.Controls.FlyoutHeader">
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="TitleLabelStyle"
+                TargetType="{x:Type Label}">
+                <Setter Property="FontFamily"
+                    Value="{StaticResource FlexoBold}" />
+                <Setter Property="FontAttributes"
+                    Value="Bold" />
+                <Setter Property="FontSize"
+                    Value="{StaticResource MediumSize}" />
+                <Setter Property="HorizontalOptions"
+                    Value="StartAndExpand" />
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <Grid BackgroundColor="Black">
+
+        <StackLayout x:Name="headerLayout" 
+                     Spacing="30" 
+                     Padding="8" 
+                     Orientation="Vertical" 
+                     BackgroundColor="{StaticResource FondoStarMenu}" 
+                     HeightRequest="150" 
+                     WidthRequest="300">
+            <!--<Image x:Name="image" HeightRequest="100" WidthRequest="70" Source="https://trilce.ucv.edu.pe/Fotos/Mediana/7000632681.jpg" />-->
+
+            <!--"https://trilce.ucv.edu.pe/Fotos/Mediana/7000632681.jpg" -->
+
+            <controls:CircleImage 
+                Source="photo_default.png"
+                Aspect="AspectFit">
+
+                <controls:CircleImage.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android, iOS">55</On>
+                        <On Platform="WinPhone">75</On>
+                    </OnPlatform>
+                </controls:CircleImage.WidthRequest>
+
+                <controls:CircleImage.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android, iOS">55</On>
+                        <On Platform="WinPhone">75</On>
+                    </OnPlatform>
+                </controls:CircleImage.HeightRequest>
+            </controls:CircleImage>
+
+            <StackLayout Spacing="6" Padding="8">
+                <Label Text="{Binding Apellidos}" TextColor="White" Style="{StaticResource TitleLabelStyle}"></Label>
+                <Label Text="{Binding Nombre}" TextColor="White" Style="{StaticResource TitleLabelStyle}"></Label>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentView>

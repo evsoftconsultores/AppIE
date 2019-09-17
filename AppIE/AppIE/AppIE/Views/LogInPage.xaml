@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             Visual="Material"
              x:Class="AppIE.Views.LogInPage">
 
     <ContentPage.Resources>
@@ -64,8 +65,8 @@
                     <Image Grid.Row="0"
                             Source="logocole.png"
                             BackgroundColor="Transparent"
-                            WidthRequest="100"
-                            HeightRequest="100"
+                            WidthRequest="120"
+                            HeightRequest="120"
                             Aspect="AspectFit"/>
 
                     <!--Usuario-->
@@ -104,7 +105,7 @@
                                 Grid.Row="0" Grid.Column="1"
                                 Margin="0,0,11,-8"
                                 Placeholder="Usuario" 
-                                Text="{Binding Usuario}"
+                                Text="{Binding UserName}"
                                 PlaceholderColor="{StaticResource UCV_1}"
                                 MaxLength="18"
                                 ReturnType="Next">
@@ -162,7 +163,7 @@
                                 Grid.Row="0" Grid.Column="1"
                                 Margin="0,0,11,-8"
                                 Placeholder="Contraseña" 
-                                Text="{Binding Contrasena}"
+                                Text="{Binding Password}"
                                 PlaceholderColor="{StaticResource UCV_1}"
                                 MaxLength="8"
                                 IsPassword="True"

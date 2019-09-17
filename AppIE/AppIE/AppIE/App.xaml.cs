@@ -1,5 +1,10 @@
-﻿using AppIE.Views;
+﻿using AppIE.Services.ServiceImplementation;
+using AppIE.Services.ServiceInterface;
+using AppIE.Views;
+using CommonServiceLocator;
 using System;
+using Unity;
+using Unity.ServiceLocation;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,7 +14,16 @@ namespace AppIE
     {
         public App()
         {
+
             InitializeComponent();
+
+            //Registro Interface
+            var unityContainer = new UnityContainer();
+            unityContainer.RegisterType<ILogInService, LogInService>();
+
+
+            var unityServiceLocator = new UnityServiceLocator(unityContainer);
+            ServiceLocator.SetLocatorProvider(() => unityServiceLocator);
 
             MainPage = new LogInPage();
         }

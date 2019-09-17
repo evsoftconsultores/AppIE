@@ -5,6 +5,9 @@
     x:Class="AppIE.Styles.Colors">
 
     <!--COLORS -->
+    <Color x:Key="BaseColor">#FFFF4444</Color>
+    <Color x:Key="FondoStarMenu">#FFFF4444</Color>
+    
     <Color x:Key="BlackColor">#000000</Color>
     <Color x:Key="WhiteColor">#FFFFFF</Color>
     <Color x:Key="AccentColor">#FF4081</Color>
@@ -19,6 +22,6 @@
     <Color x:Key="BtnBalonA">#FF4081</Color>
     <Color x:Key="BtnBalonB">#2770ff</Color>
 
-    <Color x:Key="FondoStarMenu">#2196F3</Color>
+    
 
 </ResourceDictionary>
