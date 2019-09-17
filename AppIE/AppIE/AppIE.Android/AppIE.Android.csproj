@@ -70,6 +70,39 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="..\CommonResources\Fonts\Flexo-Bold.ttf">
+      <Link>Assets\Flexo-Bold.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\CommonResources\Fonts\Flexo-Bold-Enalta.ttf">
+      <Link>Assets\Flexo-Bold-Enalta.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\CommonResources\Fonts\Flexo-BoldIt.ttf">
+      <Link>Assets\Flexo-BoldIt.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\CommonResources\Fonts\Flexo-BoldIt-Enalta.ttf">
+      <Link>Assets\Flexo-BoldIt-Enalta.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\CommonResources\Fonts\Flexo-It.ttf">
+      <Link>Assets\Flexo-It.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\CommonResources\Fonts\Flexo-It-Enalta.ttf">
+      <Link>Assets\Flexo-It-Enalta.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\CommonResources\Fonts\Flexo-Regular.ttf">
+      <Link>Assets\Flexo-Regular.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\CommonResources\Fonts\Flexo-Regular-Enalta.ttf">
+      <Link>Assets\Flexo-Regular-Enalta.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\CommonResources\Fonts\Montserrat-Bold.ttf">
+      <Link>Assets\Montserrat-Bold.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\CommonResources\Fonts\Montserrat-Regular.ttf">
+      <Link>Assets\Montserrat-Regular.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\CommonResources\Fonts\SourceSansPro-Regular.ttf">
+      <Link>Assets\SourceSansPro-Regular.ttf</Link>
+    </AndroidAsset>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -97,13 +130,15 @@
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
-    <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AppIE\AppIE.csproj">
       <Project>{4B0B565B-DBD4-4471-83E0-9C80F12B5D56}</Project>
       <Name>AppIE</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\logocole.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
