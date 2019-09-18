@@ -30,7 +30,9 @@ namespace AppIE
             routes.Add("home", typeof(HomePage));
             routes.Add("notas", typeof(CalificativoPage));
             routes.Add("bullying", typeof(ReportaBullyingPage));
-            //routes.Add("vertoken", typeof(Views.TokenPage));
+            routes.Add("asiste", typeof(Views.AsistenciasPage));
+            routes.Add("horario", typeof(Views.HorarioPage));
+            routes.Add("comunica", typeof(Views.ComunicadoPage));
         }
 
         void OnNavigating(object sender, ShellNavigatingEventArgs e)

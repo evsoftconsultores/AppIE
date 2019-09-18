@@ -91,10 +91,22 @@
             <ShellContent ContentTemplate="{DataTemplate views:CalificativoPage}"/>
         </ShellSection>
 
-        <ShellSection Route="bullying" Title="Reporta Bullying" Icon="ic_bullying_dp.png" Style="{StaticResource HomeShell}">
-            <ShellContent ContentTemplate="{DataTemplate views:CalificativoPage}"/>
+        <ShellSection Route="asiste" Title="Asistencias" Icon="ic_asiste_dp.png" Style="{StaticResource HomeShell}">
+            <ShellContent ContentTemplate="{DataTemplate views:AsistenciasPage}"/>
         </ShellSection>
 
+        <ShellSection Route="horario" Title="Horario clases" Icon="ic_horario_dp.png" Style="{StaticResource HomeShell}">
+            <ShellContent ContentTemplate="{DataTemplate views:HorarioPage}"/>
+        </ShellSection>
+
+        <ShellSection Route="bullying" Title="Reporta Bullying" Icon="ic_bullying_dp.png" Style="{StaticResource HomeShell}">
+            <ShellContent ContentTemplate="{DataTemplate views:ReportaBullyingPage}"/>
+        </ShellSection>
+
+        <ShellSection Route="comunica" Title="Comunicados" Icon="ic_comunica_dp.png" Style="{StaticResource HomeShell}">
+            <ShellContent ContentTemplate="{DataTemplate views:ComunicadoPage}"/>
+        </ShellSection>
+        
     </FlyoutItem>
 
 </Shell>

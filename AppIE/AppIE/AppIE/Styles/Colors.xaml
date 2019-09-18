@@ -10,7 +10,7 @@
     
     <Color x:Key="BlackColor">#000000</Color>
     <Color x:Key="WhiteColor">#FFFFFF</Color>
-    <Color x:Key="AccentColor">#FF4081</Color>
+    <Color x:Key="AccentColor">#FFFF4444</Color>
     <Color x:Key="PinkColor">#FC3767</Color>
     <Color x:Key="UCV_1">#002855</Color>
     <Color x:Key="UCV_2">#C8102E</Color>

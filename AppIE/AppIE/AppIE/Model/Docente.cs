@@ -88,11 +88,11 @@ namespace AppIE.Model
                 Nombre = "CESAR CARLOS",
                 Email = "czamora@liceotru.com.pe",
                 Cursos = new List<Curso>() { new Curso { IdCurso = 206, NameCurso = "COMPUTACIÓN",
-                                                            Competencias =new List<Competencias>(){
+                                                            Competencias=new List<Competencias>(){
                                                                 new Competencias { IdCompetencia=317,Descr="Se desenvuelve el entornos virtuales generados por la TIC.",Promedio=16},
                                                                 new Competencias { IdCompetencia=318,Descr="Gestiona su aprendizaje de manera autonoma.",Promedio=14}
                                                             }
-                }
+                                                        }
                                             }
             });
 

@@ -18,6 +18,8 @@ namespace AppIE.Model
         public string Nombre { get; set; }
         [DataMember(Name = "apellidos")]
         public string Apellidos { get; set; }
+        [DataMember(Name = "nromatricula")]
+        public string NroMatricula { get; set; }
     }
 
     public class UserData

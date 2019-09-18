@@ -126,14 +126,10 @@
             Margin="5,0,0,5">
 
             <StackLayout 
-                Orientation="Horizontal" 
-                HorizontalOptions="FillAndExpand" 
-                VerticalOptions="End" 
                 Spacing="0" >
 
                 <Grid ColumnSpacing="0" 
-                      RowSpacing="5" 
-                      HorizontalOptions="FillAndExpand">
+                      RowSpacing="5">
                     
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
@@ -232,16 +228,16 @@
                         Orientation="Horizontal"
                         Grid.Column="0" Grid.Row="6"  BackgroundColor="#BFE7FF">
                         <Grid
-                                        Padding="8"
-                                        ColumnSpacing="10"
-                                        HorizontalOptions="FillAndExpand">
+                            Padding="8"
+                            ColumnSpacing="10"
+                            HorizontalOptions="FillAndExpand">
 
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="Auto"/>
+                                <!--<ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>-->
                             </Grid.ColumnDefinitions>
 
                             <Grid.RowDefinitions>
@@ -256,8 +252,8 @@
                             <Label Grid.Column="1" Grid.Row="0"
                                     VerticalOptions="Center"
                                     Style="{StaticResource TitleLabelStyle}"
-                                    Text="1"/>
-                            <Label Grid.Column="2" Grid.Row="0"
+                                    Text="Promedio"/>
+                            <!--<Label Grid.Column="2" Grid.Row="0"
                                    VerticalOptions="Center"
                                    Style="{StaticResource TitleLabelStyle}"
                                             Text="2"/>
@@ -268,14 +264,15 @@
                             <Label Grid.Column="4" Grid.Row="0"
                                    VerticalOptions="Center"
                                    Style="{StaticResource TitleLabelStyle}"
-                                            Text="4"/>
+                                            Text="4"/>-->
 
                         </Grid>
                     </StackLayout>
-                    
+
+                    <!--Detalle-->
                     <StackLayout 
-                        Orientation="Horizontal"
-                        Grid.Column="0" Grid.Row="7"  BackgroundColor="#FFECEC">
+                        Grid.Column="0" Grid.Row="7"  
+                        BackgroundColor="#FFECEC">
 
                         <CollectionView 
                             x:Name="collectionView"
@@ -292,19 +289,18 @@
 
                                     <Grid
                                         Padding="8"
-                                        ColumnSpacing="10"
-                                        VerticalOptions="FillAndExpand">
+                                        ColumnSpacing="10">
 
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="Auto"/>
+                                            <!--<ColumnDefinition Width="Auto"/>
                                             <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>-->
                                         </Grid.ColumnDefinitions>
 
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="*"/>
                                         </Grid.RowDefinitions>
 
                                         <Label Grid.Column="0" Grid.Row="0"
@@ -313,10 +309,10 @@
                                             Text="{Binding Descr}"/>
 
                                         <Label Grid.Column="1" Grid.Row="0"
-                                               VerticalOptions="Center"
+                                               HorizontalOptions="Center"
                                                Style="{StaticResource TitleLabelStyle}"
                                             Text="{Binding Promedio}"/>
-                            <Label Grid.Column="2" Grid.Row="0"
+                            <!--<Label Grid.Column="2" Grid.Row="0"
                                    VerticalOptions="Center"
                                    Style="{StaticResource TitleLabelStyle}"
                                             Text="2"/>
@@ -327,9 +323,9 @@
                             <Label Grid.Column="4" Grid.Row="0"
                                    VerticalOptions="Center"
                                    Style="{StaticResource TitleLabelStyle}"
-                                            Text="4"/>
+                                            Text="4"/>-->
 
-                        </Grid>
+                                    </Grid>
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>

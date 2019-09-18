@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -15,14 +16,27 @@ namespace AppIE.ViewModels
     {
         private IInformeService _informeService;
 
-        public IList<Docente> Docentes { get { return DocenteData.Docentes; } }
+        //public IList<Docente> Docentes { get { return DocenteData.Docentes; } }
+
+        private IList<Docente> docentes;
+
+        public IList<Docente> Docentes
+        {
+            get { return DocenteData.Docentes; }
+            set
+            {
+                docentes = value;
+                RaisePropertyChanged();
+            }
+        }
 
         private List<Curso> cursos;
 
         public List<Curso> Cursos
         {
             get { return cursos; }
-            set { cursos = value;
+            set {
+                cursos = value;
                 RaisePropertyChanged();
             }
         }
@@ -32,8 +46,9 @@ namespace AppIE.ViewModels
         public List<Competencias> Competencias
         {
             get { return competencias; }
-            set { competencias = value;
-                RaisePropertyChanged();
+            set {
+                    competencias = value;
+                    RaisePropertyChanged();
             }
         }
 
@@ -57,13 +72,17 @@ namespace AppIE.ViewModels
         public Curso SelectedCurso
         {
             get { return selectedCurso; }
-            set { selectedCurso = value;
-                RaisePropertyChanged();
+            set {
+                if (selectedCurso != value)
+                {
+                    selectedCurso = value;
+                    RaisePropertyChanged();
+                }
             }
         }
 
 
-        private ObservableCollection<Docente> docentes;
+        /*private ObservableCollection<Docente> docentes;
 
         public ObservableCollection<Docente> _Docentes 
         {
@@ -72,7 +91,7 @@ namespace AppIE.ViewModels
                 docentes = value;
                 RaisePropertyChanged();
             }
-        }
+        }*/
 
 
         public ICommand SelectedDocenteChanged { get; private set; }
@@ -80,27 +99,59 @@ namespace AppIE.ViewModels
 
         public CalificativoViewModel()
         {
-            IsBusy = true;
-            _informeService = new InformeService();
+            try
+            {
+                //IsBusy = true;
+                _informeService = new InformeService();
 
-            SelectedDocenteChanged = new Command(LoadCursoDocente);
-            SelectedCursoChanged = new Command(LoadCompetencias);
+                //Docentes = _informeService.GetCalificativos();
 
-            IsBusy = false;
+                SelectedDocenteChanged = new Command(LoadCursoDocente);
+                SelectedCursoChanged = new Command(LoadCompetencias);
+
+                //IsBusy = false;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
         private void LoadCursoDocente()
         {
-            Cursos = new List<Curso>();
-            Cursos = SelectedDocente.Cursos;
+            try
+            {
+                Cursos = new List<Curso>();
+                Cursos = SelectedDocente.Cursos;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
             //await Application.Current.MainPage.DisplayAlert("Picker", "Picker changed", "OK");
         }
 
         void LoadCompetencias()
         {
+            try
+            {
+                //Competencias = new List<Competencias>();
+                if (SelectedCurso != null)
+                {
+                    Competencias= SelectedCurso.Competencias;
+                }
+               
+            }
+            catch (Exception ex)
+            {
 
-            Competencias = new List<Competencias>();
-            Competencias= SelectedCurso.Competencias;
+                throw ex;
+            }
+            
         }
 
     }
