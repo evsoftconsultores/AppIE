@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppIE.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,25 @@ namespace AppIE.Views
     {
         public CalificativoPage()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+                BindingContext = new CalificativoViewModel();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
+
+        /*protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            await Task.Delay(2000);
+            collectionView.ItemsSource = (BindingContext as CalificativoViewModel).Competencias;
+
+        }*/
     }
 }

@@ -87,7 +87,11 @@
             <ShellContent ContentTemplate="{DataTemplate views:HomePage}"/>
         </ShellSection>
 
-        <ShellSection Route="notas" Title="Calificaciones" Icon="ic_home_dp.png" Style="{StaticResource HomeShell}">
+        <ShellSection Route="notas" Title="Calificaciones" Icon="ic_notas_dp.png" Style="{StaticResource HomeShell}">
+            <ShellContent ContentTemplate="{DataTemplate views:CalificativoPage}"/>
+        </ShellSection>
+
+        <ShellSection Route="bullying" Title="Reporta Bullying" Icon="ic_bullying_dp.png" Style="{StaticResource HomeShell}">
             <ShellContent ContentTemplate="{DataTemplate views:CalificativoPage}"/>
         </ShellSection>
 

@@ -20,6 +20,7 @@ namespace AppIE
             //Registro Interface
             var unityContainer = new UnityContainer();
             unityContainer.RegisterType<ILogInService, LogInService>();
+            unityContainer.RegisterType<IInformeService, InformeService>();
 
 
             var unityServiceLocator = new UnityServiceLocator(unityContainer);

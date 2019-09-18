@@ -29,7 +29,7 @@ namespace AppIE
         {
             routes.Add("home", typeof(HomePage));
             routes.Add("notas", typeof(CalificativoPage));
-            //routes.Add("activetoken", typeof(Views.Token.ActivarTokenPage));
+            routes.Add("bullying", typeof(ReportaBullyingPage));
             //routes.Add("vertoken", typeof(Views.TokenPage));
         }
 

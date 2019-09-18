@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
              x:Class="AppIE.Views.CalificativoPage"
              Title="📑 Calificativos">
 
@@ -11,7 +12,7 @@
 
         <ResourceDictionary>
             <Style x:Key="TitleLabelStyle"
-                TargetType="{x:Type Entry}">
+                TargetType="{x:Type Label}">
                 <Setter Property="FontFamily"
                     Value="{StaticResource FlexoBold}" />
                 <Setter Property="FontAttributes"
@@ -133,10 +134,13 @@
                 <Grid ColumnSpacing="0" 
                       RowSpacing="5" 
                       HorizontalOptions="FillAndExpand">
+                    
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
+                    
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
@@ -147,35 +151,8 @@
                     </Grid.RowDefinitions>
 
                     <StackLayout 
-                        HorizontalOptions="StartAndExpand" 
                         Grid.Column="0" Grid.Row="0">
-                        <Label Grid.Column="0" Grid.Row="0" 
-                            Margin="0,10,0,0"
-                            Style="{StaticResource TitleLabelStyle}"
-                            Text="Curso:"/>
-
-                    </StackLayout>
-
-                    <StackLayout 
-                        HorizontalOptions="StartAndExpand" 
-                        Grid.Column="0" Grid.Row="1">
-                        <Picker
-                            Title="Seleccione..." 
-                            WidthRequest="400"
-                            HorizontalOptions="StartAndExpand"
-                            TitleColor="{d:StaticResource UCV_1}"
-                            ItemsSource="{Binding BusinessUnits}" 
-                            ItemDisplayBinding="{Binding DESCRSHORT}"
-                            SelectedItem="{Binding SelectedBusinessUnit}"
-                            Style="{StaticResource ComboStyle}">
-                        </Picker>
-
-                    </StackLayout>
-
-                    <StackLayout 
-                        HorizontalOptions="StartAndExpand" 
-                        Grid.Column="0" Grid.Row="2">
-                        <Label Grid.Column="0" Grid.Row="0" 
+                        <Label
                             Margin="0,10,0,0"
                             Style="{StaticResource TitleLabelStyle}"
                             Text="Profesor:"/>
@@ -183,18 +160,59 @@
                     </StackLayout>
 
                     <StackLayout 
-                        HorizontalOptions="StartAndExpand" 
-                        Grid.Column="0" Grid.Row="3"  >
-                        <Label Grid.Column="0" Grid.Row="0" 
+                        Grid.Column="0" Grid.Row="1">
+                        <Picker
+                            Title="Seleccione..." 
+                            WidthRequest="400"
+                            HorizontalOptions="StartAndExpand"
+                            TitleColor="{d:StaticResource UCV_1}"
+                            ItemsSource="{Binding Docentes}" 
+                            ItemDisplayBinding="{Binding Apellido}"
+                            SelectedItem="{Binding SelectedDocente}"
+                            x:Name="MyPicker"
+                            Style="{StaticResource ComboStyle}">
+                            <Picker.Behaviors>
+                                <behaviors:EventHandlerBehavior EventName="SelectedIndexChanged">
+                                    <behaviors:InvokeCommandAction Command="{Binding SelectedDocenteChanged}" />
+                                </behaviors:EventHandlerBehavior>
+                            </Picker.Behaviors>
+       
+                        </Picker>
+
+                    </StackLayout>
+                    
+                    <StackLayout 
+                        Grid.Column="0" Grid.Row="2">
+                        <Label
                             Margin="0,10,0,0"
-                            Style="{StaticResource ContenidLabelStyle}"
-                            Text="Juan Perez Alberto"/>
+                            Style="{StaticResource TitleLabelStyle}"
+                            Text="Curso:"/>
+
                     </StackLayout>
 
                     <StackLayout 
-                        HorizontalOptions="StartAndExpand" 
+                        Grid.Column="0" Grid.Row="3">
+                        <Picker
+                            Title="Seleccione..." 
+                            WidthRequest="400"
+                            HorizontalOptions="StartAndExpand"
+                            TitleColor="{d:StaticResource UCV_1}"
+                            ItemsSource="{Binding Cursos}" 
+                            ItemDisplayBinding="{Binding NameCurso}"
+                            SelectedItem="{Binding SelectedCurso}"
+                            Style="{StaticResource ComboStyle}">
+                            <Picker.Behaviors>
+                                <behaviors:EventHandlerBehavior EventName="SelectedIndexChanged">
+                                    <behaviors:InvokeCommandAction Command="{Binding SelectedCursoChanged}" />
+                                </behaviors:EventHandlerBehavior>
+                            </Picker.Behaviors>
+                        </Picker>
+
+                    </StackLayout>
+
+                    <StackLayout 
                         Grid.Column="0" Grid.Row="4">
-                        <Label Grid.Column="0" Grid.Row="0" 
+                        <Label 
                             Margin="0,10,0,0"
                             Style="{StaticResource TitleLabelStyle}"
                             Text="Correo electrónico:"/>
@@ -202,42 +220,84 @@
                     </StackLayout>
 
                     <StackLayout 
-                        HorizontalOptions="StartAndExpand" 
                         Grid.Column="0" Grid.Row="5" >
-                        <Label Grid.Column="0" Grid.Row="0" 
-                            Margin="0,10,0,10"
+                        <Label 
+                            Margin="0,5,0,10"
                             Style="{StaticResource ContenidLabelStyle}"
                             Text="jperez@liceotru.com.pe"/>
                     </StackLayout>
 
+                    <!--Head-->
                     <StackLayout 
-                        HorizontalOptions="StartAndExpand" 
                         Orientation="Horizontal"
-                        Grid.Column="0" Grid.Row="6"  BackgroundColor="Yellow">
+                        Grid.Column="0" Grid.Row="6"  BackgroundColor="#BFE7FF">
+                        <Grid
+                                        Padding="8"
+                                        ColumnSpacing="10"
+                                        HorizontalOptions="FillAndExpand">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Column="0" Grid.Row="0"
+                                    VerticalOptions="Center"
+                                    Style="{StaticResource TitleLabelStyle}"
+                                    Text="Competencias"/>
+
+                            <Label Grid.Column="1" Grid.Row="0"
+                                    VerticalOptions="Center"
+                                    Style="{StaticResource TitleLabelStyle}"
+                                    Text="1"/>
+                            <Label Grid.Column="2" Grid.Row="0"
+                                   VerticalOptions="Center"
+                                   Style="{StaticResource TitleLabelStyle}"
+                                            Text="2"/>
+                            <Label Grid.Column="3" Grid.Row="0"
+                                   VerticalOptions="Center"
+                                   Style="{StaticResource TitleLabelStyle}"
+                                            Text="3"/>
+                            <Label Grid.Column="4" Grid.Row="0"
+                                   VerticalOptions="Center"
+                                   Style="{StaticResource TitleLabelStyle}"
+                                            Text="4"/>
+
+                        </Grid>
+                    </StackLayout>
+                    
+                    <StackLayout 
+                        Orientation="Horizontal"
+                        Grid.Column="0" Grid.Row="7"  BackgroundColor="#FFECEC">
 
                         <CollectionView 
                             x:Name="collectionView"
-                            EmptyView="Cargando..."
+                            ItemsSource="{Binding Competencias}"
                             Margin="3,0,0,3"
-                            SelectionMode="None"
-                            >
-
-                            <!--SelectionChanged="OnCollectionViewSelectionChanged"
-                            SelectionChangedCommand="{Binding SelectionChangedCommand}"-->
-
+                            SelectionMode="None">
+                            
                             <CollectionView.ItemsLayout>
-                                <GridItemsLayout Orientation="Horizontal" />
+                                <GridItemsLayout Orientation="Vertical" />
                             </CollectionView.ItemsLayout>
 
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
 
                                     <Grid
-                                        HorizontalOptions="FillAndExpand">
+                                        Padding="8"
+                                        ColumnSpacing="10"
+                                        VerticalOptions="FillAndExpand">
 
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
                                             <ColumnDefinition Width="Auto"/>
                                             <ColumnDefinition Width="Auto"/>
                                             <ColumnDefinition Width="Auto"/>
@@ -248,12 +308,28 @@
                                         </Grid.RowDefinitions>
 
                                         <Label Grid.Column="0" Grid.Row="0"
-                                            Text="Competencias"/>
+                                               VerticalOptions="Center"
+                                               Style="{StaticResource TitleLabelStyle}"
+                                            Text="{Binding Descr}"/>
 
                                         <Label Grid.Column="1" Grid.Row="0"
-                                            Text="Competencias"/>
+                                               VerticalOptions="Center"
+                                               Style="{StaticResource TitleLabelStyle}"
+                                            Text="{Binding Promedio}"/>
+                            <Label Grid.Column="2" Grid.Row="0"
+                                   VerticalOptions="Center"
+                                   Style="{StaticResource TitleLabelStyle}"
+                                            Text="2"/>
+                            <Label Grid.Column="3" Grid.Row="0"
+                                   VerticalOptions="Center"
+                                   Style="{StaticResource TitleLabelStyle}"
+                                            Text="3"/>
+                            <Label Grid.Column="4" Grid.Row="0"
+                                   VerticalOptions="Center"
+                                   Style="{StaticResource TitleLabelStyle}"
+                                            Text="4"/>
 
-                                    </Grid>
+                        </Grid>
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>

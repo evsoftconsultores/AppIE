@@ -24,5 +24,12 @@ namespace AppIE.RestClient
                 return default(T);
         }
         #endregion
+
+        public async Task<T> GetCalificativos()
+        {
+            IList<Docente> docentes = DocenteData.Docentes;
+
+            return (T)Convert.ChangeType(docentes, typeof(T));
+        }
     }
 }
