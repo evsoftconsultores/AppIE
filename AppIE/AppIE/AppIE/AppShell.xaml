@@ -95,6 +95,10 @@
             <ShellContent ContentTemplate="{DataTemplate views:AsistenciasPage}"/>
         </ShellSection>
 
+        <ShellSection Route="merito" Title="Méritos/Deméritos" Icon="ic_merito_dp.png" Style="{StaticResource HomeShell}">
+            <ShellContent ContentTemplate="{DataTemplate views:MeritoDemeritoPage}"/>
+        </ShellSection>
+
         <ShellSection Route="horario" Title="Horario clases" Icon="ic_horario_dp.png" Style="{StaticResource HomeShell}">
             <ShellContent ContentTemplate="{DataTemplate views:HorarioPage}"/>
         </ShellSection>

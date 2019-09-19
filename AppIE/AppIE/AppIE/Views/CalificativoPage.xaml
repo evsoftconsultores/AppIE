@@ -157,13 +157,13 @@
 
                     <StackLayout 
                         Grid.Column="0" Grid.Row="1">
-                        <Picker
+                        <Picker 
                             Title="Seleccione..." 
                             WidthRequest="400"
                             HorizontalOptions="StartAndExpand"
                             TitleColor="{d:StaticResource UCV_1}"
                             ItemsSource="{Binding Docentes}" 
-                            ItemDisplayBinding="{Binding Apellido}"
+                            ItemDisplayBinding="{Binding FullNameDocente}"
                             SelectedItem="{Binding SelectedDocente}"
                             x:Name="MyPicker"
                             Style="{StaticResource ComboStyle}">
@@ -172,7 +172,6 @@
                                     <behaviors:InvokeCommandAction Command="{Binding SelectedDocenteChanged}" />
                                 </behaviors:EventHandlerBehavior>
                             </Picker.Behaviors>
-       
                         </Picker>
 
                     </StackLayout>
@@ -218,9 +217,10 @@
                     <StackLayout 
                         Grid.Column="0" Grid.Row="5" >
                         <Label 
+                            HorizontalOptions="Center"
                             Margin="0,5,0,10"
-                            Style="{StaticResource ContenidLabelStyle}"
-                            Text="jperez@liceotru.com.pe"/>
+                            Style="{StaticResource TitleLabelStyle}"
+                            Text="{Binding CorreoE}"/>
                     </StackLayout>
 
                     <!--Head-->

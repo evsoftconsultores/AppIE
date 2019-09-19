@@ -18,6 +18,13 @@ namespace AppIE.Model
         public string Email { get; set; }
         [DataMember(Name = "cursos")]
         public List<Curso> Cursos { get; set; }
+        [DataMember(Name = "fullnamedocente")]
+        public string FullNameDocente { get { return this.Apellido + ", " + this.Nombre; } }
+
+        /*public Docente()
+        {
+            this.FullNameDocente = this.Apellido + ", " + this.Nombre; 
+        }*/
     }
 
     public class DocenteData

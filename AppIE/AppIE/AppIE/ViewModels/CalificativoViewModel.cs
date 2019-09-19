@@ -52,6 +52,17 @@ namespace AppIE.ViewModels
             }
         }
 
+        private string correoE;
+
+        public string CorreoE
+        {
+            get { return correoE; }
+            set { correoE = value;
+                RaisePropertyChanged();
+            }
+        }
+
+
         private Docente selectedDocente;
 
         public Docente SelectedDocente
@@ -101,7 +112,7 @@ namespace AppIE.ViewModels
         {
             try
             {
-                //IsBusy = true;
+                IsBusy = true;
                 _informeService = new InformeService();
 
                 //Docentes = _informeService.GetCalificativos();
@@ -109,7 +120,7 @@ namespace AppIE.ViewModels
                 SelectedDocenteChanged = new Command(LoadCursoDocente);
                 SelectedCursoChanged = new Command(LoadCompetencias);
 
-                //IsBusy = false;
+                IsBusy = false;
             }
             catch (Exception ex)
             {
@@ -125,6 +136,7 @@ namespace AppIE.ViewModels
             {
                 Cursos = new List<Curso>();
                 Cursos = SelectedDocente.Cursos;
+                CorreoE = SelectedDocente.Email;
             }
             catch (Exception ex)
             {

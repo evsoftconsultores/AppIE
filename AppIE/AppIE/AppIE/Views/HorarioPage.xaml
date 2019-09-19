@@ -6,11 +6,224 @@
              mc:Ignorable="d"
              x:Class="AppIE.Views.HorarioPage"
              Title="📅 Horario de clases">
+
+    <ContentPage.Resources>
+
+        <ResourceDictionary>
+            <Style x:Key="TitleLabelStyle"
+                TargetType="{x:Type Label}">
+                <Setter Property="FontFamily"
+                    Value="{StaticResource FlexoBold}" />
+                <Setter Property="FontAttributes"
+                    Value="Bold" />
+                <Setter Property="FontSize"
+                    Value="{StaticResource MediumSize}" />
+                <Setter Property="HorizontalOptions"
+                    Value="Center" />
+            </Style>
+
+            <Style x:Key="ContenidLabelStyle"
+                TargetType="{x:Type Label}">
+                <Setter Property="FontFamily"
+                    Value="{StaticResource FlexoRegular}" />
+                <Setter Property="FontAttributes"
+                    Value="Bold" />
+                <Setter Property="FontSize"
+                    Value="{StaticResource MediumSize}" />
+                <Setter Property="HorizontalOptions"
+                    Value="Center" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Horario!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+       
+        <ScrollView
+            x:Name="scrollViewd"
+            Padding="5">
+
+            <Grid
+                RowSpacing="0">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <!--Head-->
+                <StackLayout Grid.Column="0" Grid.Row="0"
+                             BackgroundColor="#2196F3"
+                             HeightRequest="30">
+                    <Grid
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Label TextColor="{StaticResource WhiteColor}" HorizontalTextAlignment="Center" Grid.Column="0" Grid.Row="0" Text="Horas" Style="{StaticResource TitleLabelStyle}"/>
+                        <Label TextColor="{StaticResource WhiteColor}" HorizontalTextAlignment="Center" Grid.Column="1" Grid.Row="0" Text="Lunes" Style="{StaticResource TitleLabelStyle}"/>
+                        <Label TextColor="{StaticResource WhiteColor}" HorizontalTextAlignment="Center" Grid.Column="2" Grid.Row="0" Text="Martes" Style="{StaticResource TitleLabelStyle}"/>
+                        <Label TextColor="{StaticResource WhiteColor}" HorizontalTextAlignment="Center" Grid.Column="3" Grid.Row="0" Text="Miercoles" Style="{StaticResource TitleLabelStyle}"/>
+                        <Label TextColor="{StaticResource WhiteColor}" HorizontalTextAlignment="Center" Grid.Column="4" Grid.Row="0" Text="Jueves" Style="{StaticResource TitleLabelStyle}"/>
+                        <Label TextColor="{StaticResource WhiteColor}" HorizontalTextAlignment="Center" Grid.Column="5" Grid.Row="0" Text="Viernes" Style="{StaticResource TitleLabelStyle}"/>
+                    </Grid> 
+                    
+                </StackLayout>
+
+                <!--Clase 1 hora -->
+                <StackLayout Grid.Column="0" Grid.Row="1" 
+                             HeightRequest="70">
+                    <Grid
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="0" Text="07:30 a 08:30" Style="{StaticResource TitleLabelStyle}"/>
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="0" Text="Matemática &#10;Docente &#10;Carlos Urelo" Style="{StaticResource ContenidLabelStyle}"/>
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="2" Grid.Row="0" Text="Personal Social &#10;Docente &#10;Alicia Delgado" Style="{StaticResource ContenidLabelStyle}"/>
+                        <Label BackgroundColor="#F9F5D1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="3" Grid.Row="0" Text="Ciencia y Tecnologia &#10;Docente &#10;Patricia Diaz" Style="{StaticResource ContenidLabelStyle}"/>
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="4" Grid.Row="0" Text="Ciencia y Tecnologia &#10;Docente &#10;Patricia Diaz" Style="{StaticResource ContenidLabelStyle}"/>
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="5" Grid.Row="0" Text="Educación Fisica &#10;Docente &#10;Eduardo Campos" Style="{StaticResource ContenidLabelStyle}"/>
+                    </Grid>
+                </StackLayout>
+                <!--Clase 2 hora -->
+                <StackLayout Grid.Column="0" Grid.Row="2" 
+                             HeightRequest="70">
+                    <Grid
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="0" Text="08:30 a 09:30" Style="{StaticResource TitleLabelStyle}"/>
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="0" Text="Matemática &#10;Docente &#10;Carlos Urelo" Style="{StaticResource ContenidLabelStyle}"/>
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="2" Grid.Row="0" Text="Personal Social &#10;Docente &#10;Alicia Delgado" Style="{StaticResource ContenidLabelStyle}"/>
+                        <Label BackgroundColor="#F9F5D1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="3" Grid.Row="0" Text="Matemática &#10;Docente &#10;Carlos Urelo" Style="{StaticResource ContenidLabelStyle}"/>
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="4" Grid.Row="0" Text="Ciencia y Tecnologia &#10;Docente &#10;Patricia Diaz" Style="{StaticResource ContenidLabelStyle}"/>
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="5" Grid.Row="0" Text="Educación Fisica &#10;Docente &#10;Eduardo Campos" Style="{StaticResource ContenidLabelStyle}"/>
+                    </Grid>
+                </StackLayout>
+                <!--r e c r e o -->
+                <StackLayout Grid.Column="0" Grid.Row="3" 
+                             HeightRequest="30">
+                    <Grid
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="0" Text="09:30 a 10:30" Style="{StaticResource TitleLabelStyle}"/>
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="0" Text="recreo" Style="{StaticResource TitleLabelStyle}"/>
+                    </Grid>
+                </StackLayout>
+                <!--Clase 3 hora -->
+                <StackLayout Grid.Column="0" Grid.Row="4" 
+                             HeightRequest="70">
+                    <Grid
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="0" Text="10:30 a 11:30" Style="{StaticResource TitleLabelStyle}"/>
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="0" Text="Comunicación &#10;Docente &#10;Walter Cardenas" Style="{StaticResource ContenidLabelStyle}"/>
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="2" Grid.Row="0" Text="Educación Fisica &#10;Docente &#10;Eduardo Campos" Style="{StaticResource ContenidLabelStyle}"/>
+                        <Label BackgroundColor="#F9F5D1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="3" Grid.Row="0" Text="Matemática &#10;Docente &#10;Carlos Urelo" Style="{StaticResource ContenidLabelStyle}"/>
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="4" Grid.Row="0" Text="Religión &#10;Docente &#10;Sonia Chavez" Style="{StaticResource ContenidLabelStyle}"/>
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="5" Grid.Row="0" Text="Comunicación &#10;Docente &#10;Walter Cardenas" Style="{StaticResource ContenidLabelStyle}"/>
+                    </Grid>
+                </StackLayout>
+                <!--Clase 4 hora -->
+                <StackLayout Grid.Column="0" Grid.Row="5" 
+                             HeightRequest="70">
+                    <Grid
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="0" Grid.Row="0" Text="11:30 a 12:30" Style="{StaticResource TitleLabelStyle}"/>
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="0" Text="Comunicación &#10;Docente &#10;Walter Cardenas" Style="{StaticResource ContenidLabelStyle}"/>
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="2" Grid.Row="0" Text="Educación Fisica &#10;Docente &#10;Eduardo Campos" Style="{StaticResource ContenidLabelStyle}"/>
+                        <Label BackgroundColor="#F9F5D1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="3" Grid.Row="0" Text="Computo &#10;Docente &#10;Enrique Incio" Style="{StaticResource ContenidLabelStyle}"/>
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="4" Grid.Row="0" Text="Religión &#10;Docente &#10;Sonia Chavez" Style="{StaticResource ContenidLabelStyle}"/>
+                        <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Column="5" Grid.Row="0" Text="Comunicación &#10;Docente &#10;Walter Cardenas" Style="{StaticResource ContenidLabelStyle}"/>
+                    </Grid>
+                </StackLayout>
+            </Grid>
+            
+
+        </ScrollView>
     </ContentPage.Content>
+    
 </ContentPage>

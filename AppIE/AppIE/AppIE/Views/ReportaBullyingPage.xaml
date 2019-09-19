@@ -225,6 +225,7 @@
                     <StackLayout 
                         Grid.Column="0" Grid.Row="5" >
                         <Entry
+                            Text="{Binding TxtAgresor}"
                             HorizontalOptions="FillAndExpand"
                             Margin="0,5,0,10"
                             Style="{StaticResource TitleEntryStyle}"/>
@@ -242,6 +243,7 @@
                     <StackLayout 
                         Grid.Column="0" Grid.Row="7" >
                         <Editor
+                            Text="{Binding TxtDetalle}"
                             Margin="0,5,0,10"
                             VerticalOptions="FillAndExpand"/>
                     </StackLayout>
@@ -254,7 +256,7 @@
             <Button Margin="15,5"
                                 Text="Enviar Alerta Bullying" 
                                 Style="{StaticResource ButtonStyle}"
-                                Command="{Binding LoginCommand}"
+                                Command="{Binding ReportarCommand}"
                                 Visual="Material">
                 <Button.CornerRadius>
                     <OnPlatform x:TypeArguments="x:Int32">

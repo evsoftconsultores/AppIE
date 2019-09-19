@@ -33,6 +33,7 @@ namespace AppIE
             routes.Add("asiste", typeof(Views.AsistenciasPage));
             routes.Add("horario", typeof(Views.HorarioPage));
             routes.Add("comunica", typeof(Views.ComunicadoPage));
+            routes.Add("merito", typeof(Views.MeritoDemeritoPage));
         }
 
         void OnNavigating(object sender, ShellNavigatingEventArgs e)
