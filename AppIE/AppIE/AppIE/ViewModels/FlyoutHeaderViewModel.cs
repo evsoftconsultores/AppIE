@@ -35,6 +35,16 @@ namespace AppIE.ViewModels
             }
         }
 
+        private string roMatricula;
+
+        public string NroMatricula
+        {
+            get { return roMatricula; }
+            set { roMatricula = value;
+                RaisePropertyChanged();
+            }
+        }
+
         public FlyoutHeaderViewModel()
         {
             IsBusy = true;
@@ -52,6 +62,7 @@ namespace AppIE.ViewModels
 
                 Apellidos = user.Apellidos;
                 Nombre = user.Nombre;
+                NroMatricula = user.NroMatricula;
             }
             catch { 
             

@@ -30,6 +30,12 @@
                     Value="#B4FFFFFF" />
             <Setter Property="Shell.UnselectedColor" 
                     Value="#95FFFFFF" />
+            <!--<Setter Property="Shell.FontFamily"
+                    Value="{StaticResource FlexoBold}" />
+            <Setter Property="Shell.FontAttributes"
+                    Value="Bold" />
+            <Setter Property="Shell.FontSize"
+                    Value="{StaticResource MediumSize}"/>-->
         </Style>
 
         <Style TargetType="ShellItem" 
@@ -45,33 +51,9 @@
                TargetType="Element"
                BasedOn="{StaticResource BaseStyle}">
             <Setter Property="Shell.BackgroundColor" 
-                    Value="{StaticResource BaseColor}" />
+                    Value="{StaticResource BaseColor}"/>
         </Style>
-        <Style x:Key="GthShell" 
-               TargetType="Element" 
-               BasedOn="{StaticResource BaseStyle}">
-            <Setter Property="Shell.BackgroundColor" 
-                    Value="#ED3B3B" />
-        </Style>
-        <Style x:Key="ActiveTokenShell" 
-               TargetType="Element" 
-               BasedOn="{StaticResource BaseStyle}">
-            <Setter Property="Shell.BackgroundColor"
-                    Value="#657BFE" />
-        </Style>
-        <Style x:Key="AlmacenShell" 
-               TargetType="Element" 
-               BasedOn="{StaticResource BaseStyle}">
-            <Setter Property="Shell.BackgroundColor" 
-                    Value="#63BBFF" />
-        </Style>
-
-        <Style x:Key="AMShell" 
-               TargetType="Element" 
-               BasedOn="{StaticResource BaseStyle}">
-            <Setter Property="Shell.BackgroundColor"
-                    Value="#F8AC59" />
-        </Style>
+        
     </Shell.Resources>
 
     <Shell.FlyoutHeader>
@@ -84,7 +66,7 @@
                 FlyoutDisplayOptions="AsMultipleItems">
 
         <ShellSection Route="home" Title="Inicio" Icon="ic_home_dp.png" Style="{StaticResource HomeShell}">
-            <ShellContent ContentTemplate="{DataTemplate views:HomePage}"/>
+            <ShellContent ContentTemplate="{DataTemplate views:HomePage}" />
         </ShellSection>
 
         <ShellSection Route="notas" Title="Calificaciones" Icon="ic_notas_dp.png" Style="{StaticResource HomeShell}">

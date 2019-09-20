@@ -151,7 +151,7 @@
 
                 <CollectionView 
                     x:Name="collectionView"
-                    ItemsSource="{Binding MerecimientoAlumno}"
+                    ItemsSource="{Binding MerecimientoAlumnos}"
                     Margin="3,0,0,3"
                     SelectionMode="None"
                     SelectedItem="{Binding SelectedOrder, Mode=TwoWay}">
@@ -211,34 +211,50 @@
                                         <!--Descripcion-->
                                         <Label Grid.ColumnSpan="2" Grid.Row="0"
                                             HorizontalOptions="Start"
-                                            Text="{Binding Descripcion}" 
                                             d:BackgroundColor="AntiqueWhite"
-                                            Style="{StaticResource DetalleMeritos.DetalleMerito.Descr}"/>
+                                               TextColor="Chocolate"
+                                            Style="{StaticResource TitleLabelStyle}">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="📃 " />
+                                                    <Span Text="{Binding DetalleMerito.Descr}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
 
-                                        <!--Fecha-->
+                                        <!--Mérito/Demerito-->
                                         <Label Grid.Column="0" Grid.Row="1"
+                                          HorizontalOptions="End"
+                                        Text="Ⓜ️"
+                                            Style="{StaticResource ContenidLabelStyle}"/>
+                                        <Label Grid.Column="1" Grid.Row="1"
+                                           Text="{Binding Merito.NameMerito}"
+                                           Style="{StaticResource TitleLabelStyle}"/>
+                                        
+                                        <!--Fecha-->
+                                        <Label Grid.Column="0" Grid.Row="2"
                                           HorizontalOptions="End"
                                         Text="Fecha:"
                                             Style="{StaticResource ContenidLabelStyle}"/>
-                                        <Label Grid.Column="1" Grid.Row="1"
-                                           Text="{Binding Fecha}"
-                                           Style="{StaticResource Fecha}"/>
-
-                                        <!--Hora-->
-                                        <Label Grid.Column="0" Grid.Row="2"
-                                          HorizontalOptions="End"
-                                        Text="Hora:"
-                                          Style="{StaticResource ContenidLabelStyle}" />
                                         <Label Grid.Column="1" Grid.Row="2"
-                                        Text="{Binding Hora}"
+                                           Text="{Binding Fecha}"
                                            Style="{StaticResource TitleLabelStyle}"/>
 
-                                        <!--Docente-->
+                                        <!--Puntaje-->
                                         <Label Grid.Column="0" Grid.Row="3"
+                                          HorizontalOptions="End"
+                                        Text="Puntaje:"
+                                          Style="{StaticResource ContenidLabelStyle}" />
+                                        <Label Grid.Column="1" Grid.Row="3"
+                                        Text="{Binding DetalleMerito.puntaje}"
+                                           Style="{StaticResource TitleLabelStyle}"/>
+
+                                        <!--Docente
+                                        <Label Grid.Column="0" Grid.Row="4"
                                           HorizontalOptions="End"
                                         Text="Publica:"
                                           Style="{StaticResource ContenidLabelStyle}" />
-                                        <Label Grid.Column="1" Grid.Row="3"
+                                        <Label Grid.Column="1" Grid.Row="4"
                                           Style="{StaticResource TitleLabelStyle}">
                                             <Label.FormattedText>
                                                 <FormattedString>
@@ -247,7 +263,7 @@
                                                     <Span Text="{Binding Docente.Nombre}"/>
                                                 </FormattedString>
                                             </Label.FormattedText>
-                                        </Label>
+                                        </Label>-->
                                     </Grid>
                                 </Frame>
                             </Grid>

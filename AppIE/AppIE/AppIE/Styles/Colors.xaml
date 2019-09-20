@@ -5,12 +5,12 @@
     x:Class="AppIE.Styles.Colors">
 
     <!--COLORS -->
-    <Color x:Key="BaseColor">#FFFF4444</Color>
-    <Color x:Key="FondoStarMenu">#FFFF4444</Color>
+    <Color x:Key="BaseColor">#2196F3</Color>
+    <Color x:Key="FondoStarMenu">#2196F3</Color>
     
     <Color x:Key="BlackColor">#000000</Color>
     <Color x:Key="WhiteColor">#FFFFFF</Color>
-    <Color x:Key="AccentColor">#FFFF4444</Color>
+    <Color x:Key="AccentColor">#2196F3</Color>
     <Color x:Key="PinkColor">#FC3767</Color>
     <Color x:Key="UCV_1">#002855</Color>
     <Color x:Key="UCV_2">#C8102E</Color>

@@ -115,7 +115,7 @@ namespace AppIE.ViewModels
                 IsBusy = true;
                 _informeService = new InformeService();
 
-                //Docentes = _informeService.GetCalificativos();
+                Docentes = DocenteData.Docentes;
 
                 SelectedDocenteChanged = new Command(LoadCursoDocente);
                 SelectedCursoChanged = new Command(LoadCompetencias);

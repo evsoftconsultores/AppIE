@@ -20,6 +20,19 @@
                 <Setter Property="HorizontalOptions"
                     Value="StartAndExpand" />
             </Style>
+
+            <Style x:Key="ContenidLabelStyle"
+                TargetType="{x:Type Label}">
+                <Setter Property="FontFamily"
+                    Value="{StaticResource FlexoRegular}" />
+                <Setter Property="FontAttributes"
+                    Value="Bold" />
+                <Setter Property="FontSize"
+                    Value="{StaticResource MediumSize}" />
+                <Setter Property="HorizontalOptions"
+                    Value="Start" />
+            </Style>
+            
         </ResourceDictionary>
     </ContentView.Resources>
 
@@ -55,9 +68,29 @@
                 </controls:CircleImage.HeightRequest>
             </controls:CircleImage>
 
-            <StackLayout Spacing="6" Padding="8">
-                <Label Text="{Binding Apellidos}" TextColor="White" Style="{StaticResource TitleLabelStyle}"></Label>
-                <Label Text="{Binding Nombre}" TextColor="White" Style="{StaticResource TitleLabelStyle}"></Label>
+            <Label 
+                Margin="0,-18"
+                Text="Nro. Matricula" TextColor="White" HorizontalOptions="Center" 
+                   HorizontalTextAlignment="Center" Style="{StaticResource TitleLabelStyle}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Nro. Matricula " />
+                        <Span Text="{Binding NroMatricula}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <StackLayout Spacing="6" Padding="5">
+                <Label Text="Alumno" TextColor="White" Style="{StaticResource ContenidLabelStyle}"></Label>
+                <Label Text="{Binding Nombre}" TextColor="White" Style="{StaticResource TitleLabelStyle}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="{Binding Apellidos}" />
+                            <Span Text=", " />
+                            <Span Text="{Binding Nombre}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
             </StackLayout>
         </StackLayout>
     </Grid>

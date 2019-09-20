@@ -213,13 +213,21 @@
                                         <Label Grid.ColumnSpan="2" Grid.Row="0"
                                             HorizontalOptions="Start"
                                             Text="{Binding Descripcion}" 
+                                               TextColor="Chocolate"
                                             d:BackgroundColor="AntiqueWhite"
-                                            Style="{StaticResource TitleLabelStyle}"/>
+                                            Style="{StaticResource TitleLabelStyle}">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="📌 " />
+                                                    <Span Text="{Binding Descripcion}"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
 
                                         <!--Fecha-->
                                         <Label Grid.Column="0" Grid.Row="1"
                                           HorizontalOptions="End"
-                                        Text="Fecha:"
+                                        Text="📅 "
                                             Style="{StaticResource ContenidLabelStyle}"/>
                                         <Label Grid.Column="1" Grid.Row="1"
                                            Text="{Binding Fecha}"
@@ -228,7 +236,7 @@
                                         <!--Hora-->
                                         <Label Grid.Column="0" Grid.Row="2"
                                           HorizontalOptions="End"
-                                        Text="Hora:"
+                                        Text="🕜 "
                                           Style="{StaticResource ContenidLabelStyle}" />
                                         <Label Grid.Column="1" Grid.Row="2"
                                         Text="{Binding Hora}"
