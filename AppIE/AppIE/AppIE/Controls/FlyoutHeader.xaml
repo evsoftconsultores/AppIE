@@ -81,7 +81,7 @@
             </Label>
 
             <StackLayout Spacing="6" Padding="5">
-                <Label Text="Alumno" TextColor="White" Style="{StaticResource ContenidLabelStyle}"></Label>
+                <Label Text="{Binding Condicion}" TextColor="White" Style="{StaticResource ContenidLabelStyle}"></Label>
                 <Label Text="{Binding Nombre}" TextColor="White" Style="{StaticResource TitleLabelStyle}">
                     <Label.FormattedText>
                         <FormattedString>

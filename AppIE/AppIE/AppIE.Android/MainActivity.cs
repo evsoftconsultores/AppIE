@@ -11,8 +11,8 @@ using AppIE.Views;
 
 namespace AppIE.Droid
 {
-    [Activity(Label = "AppIE", 
-        Icon = "@mipmap/icon", 
+    [Activity(Label = "COVIR_LT", //"AppIE", 
+        Icon = "@drawable/logocole", //"@mipmap/icon", 
         Theme = "@style/MainTheme", 
         MainLauncher = true, 
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation

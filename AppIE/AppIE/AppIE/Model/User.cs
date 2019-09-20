@@ -20,6 +20,8 @@ namespace AppIE.Model
         public string Apellidos { get; set; }
         [DataMember(Name = "nromatricula")]
         public string NroMatricula { get; set; }
+        [DataMember(Name = "condicion")]
+        public string Condicion { get; set; }
     }
 
     public class UserData
@@ -30,10 +32,10 @@ namespace AppIE.Model
         {
             Users = new List<User>();
 
-            Users.Add(new User { IdUser = 1,UserName="GINCIO", Password="10101010",Nombre="GLORIA", Apellidos="ZAPATA INCIO",NroMatricula="40904759" });
-            Users.Add(new User { IdUser = 2, UserName = "EINCIO", Password = "04748826", Nombre = "ENRIQUE", Apellidos = "INCIO CHAPILLIQUEN", NroMatricula = "75868956" });
-            Users.Add(new User { IdUser = 3, UserName = "DOCENTE", Password = "12345678", Nombre = "DOCENTE", Apellidos = "LICEO TRUJILLO", NroMatricula = "65235784" });
-            Users.Add(new User { IdUser = 4, UserName = "AMIGO", Password = "87654321", Nombre = "AMIGO", Apellidos = "AMIGO DE GLORIA", NroMatricula = "52568945" });
+            Users.Add(new User { IdUser = 1,UserName="GINCIO", Password="10101010",Nombre="GLORIA FELICITA", Apellidos="ZAPATA INCIO",NroMatricula="40904759", Condicion="Alumno" });
+            Users.Add(new User { IdUser = 2, UserName = "EINCIO", Password = "04748826", Nombre = "ENRIQUE", Apellidos = "INCIO CHAPILLIQUEN", NroMatricula = "75868956", Condicion = "Desarrollador" });
+            Users.Add(new User { IdUser = 3, UserName = "RJAUREGUI", Password = "12345678", Nombre = "LUIS RAFAEL", Apellidos = "JÁUREGUI DÍAZ", NroMatricula = "65235784", Condicion = "Docente" });
+            Users.Add(new User { IdUser = 4, UserName = "WPAREDES", Password = "87654321", Nombre = "WELLINGTON ISAAC", Apellidos = "PAREDES PAULINI", NroMatricula = "52568945", Condicion = "Alumno" });
         }
 
     }

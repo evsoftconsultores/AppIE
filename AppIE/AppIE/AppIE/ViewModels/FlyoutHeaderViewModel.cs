@@ -35,14 +35,22 @@ namespace AppIE.ViewModels
             }
         }
 
-        private string roMatricula;
+        private string nroMatricula;
 
         public string NroMatricula
         {
-            get { return roMatricula; }
-            set { roMatricula = value;
+            get { return nroMatricula; }
+            set { nroMatricula = value;
                 RaisePropertyChanged();
             }
+        }
+
+        private string condicion;
+
+        public string Condicion
+        {
+            get { return condicion; }
+            set { condicion = value; }
         }
 
         public FlyoutHeaderViewModel()
@@ -63,6 +71,7 @@ namespace AppIE.ViewModels
                 Apellidos = user.Apellidos;
                 Nombre = user.Nombre;
                 NroMatricula = user.NroMatricula;
+                Condicion = user.Condicion;
             }
             catch { 
             

@@ -1,3 +1,5 @@
 Alias: Appie
 
-Contraseña: 3(e2f0JVZ;ZS0_rg
+Contraseña: 3(e2f0JVZ;ZS0_rg 
+
+Anterior: AppIE.Android
