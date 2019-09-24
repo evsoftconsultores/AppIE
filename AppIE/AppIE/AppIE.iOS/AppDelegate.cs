@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+//using ImageCircle.Forms.Plugin.iOS;
 using UIKit;
 
 namespace AppIE.iOS
@@ -22,8 +23,13 @@ namespace AppIE.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            Xamarin.Forms.Forms.SetFlags("Shell_Experimental", "Visual_Experimental",
+                                                    "CollectionView_Experimental"); // ONLY if using a pre-release of Xamarin.Forms
+
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+            Xamarin.Forms.FormsMaterial.Init();
+            //ImageCircleRenderer.Init();
 
             return base.FinishedLaunching(app, options);
         }

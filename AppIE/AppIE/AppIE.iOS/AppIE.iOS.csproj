@@ -26,6 +26,12 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignProvision />
+    <CodesignExtraArgs />
+    <CodesignResourceRules />
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -59,9 +65,45 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <BundleResource Include="..\CommonResources\Fonts\Flexo-Bold.ttf">
+      <Link>Resources\fonts\Flexo-Bold.ttf</Link>
+    </BundleResource>
+    <BundleResource Include="..\CommonResources\Fonts\Flexo-Bold-Enalta.ttf">
+      <Link>Resources\fonts\Flexo-Bold-Enalta.ttf</Link>
+    </BundleResource>
+    <BundleResource Include="..\CommonResources\Fonts\Flexo-BoldIt.ttf">
+      <Link>Resources\fonts\Flexo-BoldIt.ttf</Link>
+    </BundleResource>
+    <BundleResource Include="..\CommonResources\Fonts\Flexo-BoldIt-Enalta.ttf">
+      <Link>Resources\fonts\Flexo-BoldIt-Enalta.ttf</Link>
+    </BundleResource>
+    <BundleResource Include="..\CommonResources\Fonts\Flexo-It.ttf">
+      <Link>Resources\fonts\Flexo-It.ttf</Link>
+    </BundleResource>
+    <BundleResource Include="..\CommonResources\Fonts\Flexo-It-Enalta.ttf">
+      <Link>Resources\fonts\Flexo-It-Enalta.ttf</Link>
+    </BundleResource>
+    <BundleResource Include="..\CommonResources\Fonts\Flexo-Regular.ttf">
+      <Link>Resources\fonts\Flexo-Regular.ttf</Link>
+    </BundleResource>
+    <BundleResource Include="..\CommonResources\Fonts\Flexo-Regular-Enalta.ttf">
+      <Link>Resources\fonts\Flexo-Regular-Enalta.ttf</Link>
+    </BundleResource>
+    <BundleResource Include="..\CommonResources\Fonts\Montserrat-Bold.ttf">
+      <Link>Resources\fonts\Montserrat-Bold.ttf</Link>
+    </BundleResource>
+    <BundleResource Include="..\CommonResources\Fonts\Montserrat-Regular.ttf">
+      <Link>Resources\fonts\Montserrat-Regular.ttf</Link>
+    </BundleResource>
+    <BundleResource Include="..\CommonResources\Fonts\SourceSansPro-Regular.ttf">
+      <Link>Resources\fonts\SourceSansPro-Regular.ttf</Link>
+    </BundleResource>
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -152,5 +194,32 @@
       <Project>{4B0B565B-DBD4-4471-83E0-9C80F12B5D56}</Project>
       <Name>AppIE</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_asiste_dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_bullying_dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_comunica_dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_home_dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_horario_dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_merito_dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_notas_dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\photo_default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logocole.png" />
   </ItemGroup>
 </Project>
